@@ -3,7 +3,22 @@
  * @return {boolean}
  */
 var isPerfectSquare = function(num) {
-	return Math.sqrt(num)%1 === 0;
+	var left = 1,
+		right = num,
+		mid,
+		temp;
+	while(left <= right) {
+		mid = parseInt((left + right)/2, 10);
+		temp = mid*mid;
+		if(temp === num) {
+			return true;
+		} else if(temp > num) {
+			right = mid - 1;
+		} else {
+			left = mid + 1;
+		}
+	}
+	return false;
 };
 
 console.log(isPerfectSquare(17) === false);
