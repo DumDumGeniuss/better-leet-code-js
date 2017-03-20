@@ -9,10 +9,8 @@ var twoSum = function(nums, target) {
     for(var i = 0; i <= num_length - 1; i++){
         for(var j = i+1; j <= num_length - 1; j++){
             if(nums[i] + nums[j] == target){
-                var solution = [];
-                solution.push(i);
-                solution.push(j);
-                result.push(solution);
+                result.push(i);
+                result.push(j);
             }
         }
     }
